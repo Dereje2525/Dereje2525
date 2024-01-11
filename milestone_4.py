@@ -1,5 +1,5 @@
 import random
-from word_generet import word_creat
+#from word_generet import word_creat
 import string
 import json
 from urllib.request import Request, urlopen
@@ -34,22 +34,27 @@ class Hangman:
         self.letter_guess = set(self.words)
         self.word_list=set(string.ascii_lowercase)
         self.list_of_guess =set()
+        self.num_letters=len(self.letter_guess)
 
 
 
-        while len (self.letter_guess)>0 and self.num_lives>0:
+        while self.num_letters>0 and self.num_lives>0:
             print( 'You used this letters:',''.join(self.list_of_guess))
             lista_de_palabras=[leter if leter in self.list_of_guess else '-'for leter in self.words] 
             print('\n The Curren Word :', ''.join (lista_de_palabras))
             use__letter = input ('Guess one letter:').lower()
             if use__letter in self.word_list-self.list_of_guess:
                 self.list_of_guess.add(use__letter)
+
                 if use__letter in self.letter_guess:
                     self.letter_guess.remove(use__letter)
+                    self.num_letters=self.num_letters -1
+
                     print('')
 
                 elif use__letter in  self.list_of_guess:
                     self.num_lives=self.num_lives-1
+
                     print ('n\ You already tried that letter!')
 
             else:
