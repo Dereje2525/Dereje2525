@@ -1,10 +1,7 @@
 import random
-#from word_generet import word_creat
 import string
 import json
 from urllib.request import Request, urlopen
-
-
 class Hangman:
     def __init__(self):
         self.num_letters = 0
@@ -12,7 +9,6 @@ class Hangman:
         self.list_of_guess = []
         self.word_list=['abcdefghijklmnopqrstuvwxyz']
         self.letter_guess=[]
-        #self.words = ['dereje','alem','dewit','bayush', 'wessen', 'elfinesh','negedde','weldesenbet','eyuel','zufan']
 
     def asc_for_input(self): 
         print('Guess a letter.')
@@ -29,8 +25,8 @@ class Hangman:
 
         while self.num_letters>0 and self.num_lives>0:
             print( 'You used this letters:',''.join(self.list_of_guess))
-            lista_de_palabras=[leter if leter in self.list_of_guess else '-'for leter in self.word] 
-            print('\n The Curren Word :', ''.join (lista_de_palabras))
+            list_of_letter_guessed =[letter if letter in self.list_of_guess else '-'for letter in self.word] 
+            print('\n The Curren Word :', ''.join (list_of_letter_guessed))
             use_letter = self.asc_for_input()
 
             if use_letter in self.word_list-self.list_of_guess:
@@ -52,7 +48,7 @@ class Hangman:
             print('Congratulations. You won the game! The word is:', self.word)       
 
 
-
-game=Hangman()
-game.play_game('dereje',5)
+if __name__ == "__main__":
+    game=Hangman()
+    game.play_game('dereje',5)
 
