@@ -64,7 +64,7 @@ Payton 3.12
 
 #### Launch 
   
-The game logic is separated into three file metodos. This file defines functions for initializing the atrubutes, Inputing guess wordes and presenting list of letter guessed an the game state
+The game logic is separated into three file metodos. This file defines functions for initializing the attributes, Inputing guess wordes and presenting list of letter guessed an the game state
 
 Here is a brief overview of the functions defined in hangman.js:
 
@@ -72,7 +72,7 @@ Here is a brief overview of the functions defined in hangman.js:
     
     def asc_for_input(): Inputing guess wordes
        
-    def play_game():presenting list of letter guessed an the game state
+    def play_game():presenting list of letters guessed and the game state
     
   
   code sample
